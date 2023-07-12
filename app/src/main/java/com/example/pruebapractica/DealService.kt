@@ -6,6 +6,6 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface DealService {
-    @Query("SELECT * FROM Deal ")
-    fun listDeals(@Path("id") id: String?, @Path("price") price: String?): Call<List<OfferModel>>
+    @GET("deals")
+    fun listDeals(@Query("storeID") id: String?, @Query("upperPrice") price: String?): Call<List<OfferModel>>
 }
